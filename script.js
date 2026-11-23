@@ -1,77 +1,41 @@
-function toNumberValue(val) {
-  if (val === null || val === undefined) {
-    return NaN;
-  }
-  const cleaned = String(val).trim();
-  if (cleaned === "") {
-    return NaN;
-  }
-  const num = Number(cleaned);
-  return Number.isFinite(num) ? num : NaN;
-}
 
-function calculateInterest(principal, rate, time) {
-  const p = toNumberValue(principal);
-  const r = toNumberValue(rate);
-  const t = toNumberValue(time);
+document.addEventListener("DOMContentLoaded", function () {
 
-  if (Number.isNaN(p) || Number.isNaN(r) || Number.isNaN(t)) {
-    return {
-      simpleInterest: NaN,
-      totalAmount: NaN
-    };
-  }
+    const calculateBtn = document.getElementById("calculateBtn");
+    const result = document.getElementById("result");
 
-  const simpleInterest = (p * r * t) / 100;
-  const totalAmount = p + simpleInterest;
+    calculateBtn.addEventListener("click", function () {
 
-  return {
-    simpleInterest,
-    totalAmount
-  };
-}
+        const principalValue = document.getElementById("principal").value;
+        const rateValue = document.getElementById("rate").value;
+        const timeValue = document.getElementById("time").value;
 
-function handleCalculateClick() {
-  const principalInput = document.getElementById("principal");
-  const rateInput = document.getElementById("rate");
-  const timeInput = document.getElementById("time");
-  const simpleInterestEl = document.getElementById("simpleInterest");
-  const totalAmountEl = document.getElementById("totalAmount");
+        const principal = Number(principalValue);
+        const rate = Number(rateValue);
+        const time = Number(timeValue);
 
-  if (!principalInput || !rateInput || !timeInput) {
-    return;
-  }
+        if (
+            principalValue === "" ||
+            rateValue === "" ||
+            timeValue === "" ||
+            !Number.isFinite(principal) ||
+            !Number.isFinite(rate) ||
+            !Number.isFinite(time) ||
+            principal <= 0 ||
+            rate < 0 ||
+            time <= 0
+        ) {
+            result.textContent =
+                "Please enter a positive principal, a non-negative interest rate, and a positive time.";
+            return;
+        }
 
-  const { simpleInterest, totalAmount } = calculateInterest(
-    principalInput.value,
-    rateInput.value,
-    timeInput.value
-  );
+        const interest = (principal * rate * time) / 100;
+        const total = principal + interest;
 
-  if (simpleInterestEl) {
-    simpleInterestEl.textContent = Number.isNaN(simpleInterest)
-      ? "Invalid input"
-      : simpleInterest.toFixed(2);
-  }
+        result.innerHTML =
+            "Simple Interest: $" + interest.toFixed(2) +
+            "<br>Total Amount: $" + total.toFixed(2);
+    });
 
-  if (totalAmountEl) {
-    totalAmountEl.textContent = Number.isNaN(totalAmount)
-      ? "Invalid input"
-      : totalAmount.toFixed(2);
-  }
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  const button = document.getElementById("calculate") || document.getElementById("calculateBtn");
-  if (button) {
-    button.addEventListener("click", handleCalculateClick);
-  }
 });
-
-if (typeof module !== "undefined" && module.exports) {
-  module.exports = {
-    toNumberValue,
-    calculateInterest,
-    handleCalculateClick
-  };
-}
