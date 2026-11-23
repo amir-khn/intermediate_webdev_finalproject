@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Character Encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Responsive Design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Title -->
+    <title>Interest Rate Calculator | Loan Payment Calculator</title>
+
+    <!-- SEO Meta Description -->
+    <meta name="description" content="Calculate your monthly loan payments and total interest with this easy-to-use Interest Rate Calculator.">
+
+    <!-- SEO Keywords -->
+    <meta name="keywords" content="Interest Rate Calculator, Loan Calculator, Monthly Payment, Interest Calculation">
+
+    <!-- Author -->
+    <meta name="author" content="Amir Khan">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JavaScript File -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Interest Rate Calculator</h1>
+        <p>Calculate your monthly loan payments and interest easily.</p>
+    </header>
+
+    <main>
+        <section class="calculator">
+
+            <h2>Calculate Your Loan</h2>
+
+            <form id="calculatorForm">
+
+                <label for="principal">Loan Amount ($)</label>
+                <input
+                    type="number"
+                    id="principal"
+                    placeholder="Enter loan amount"
+                    min="0.01"
+                    step="any"
+                    required
+                >
+
+                <label for="rate">Annual Interest Rate (%)</label>
+                <input
+                    type="number"
+                    id="rate"
+                    placeholder="Enter interest rate"
+                    min="0"
+                    step="any"
+                    required
+                >
+
+                <label for="years">Loan Duration (Years)</label>
+                <input
+                    type="number"
+                    id="years"
+                    placeholder="Enter years"
+                    min="0.01"
+                    step="any"
+                    required
+                >
+
+                <button type="submit">Calculate</button>
+
+            </form>
+
+            <div id="result" aria-live="polite"></div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Interest Rate Calculator. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
