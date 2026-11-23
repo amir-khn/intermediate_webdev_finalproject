@@ -5,23 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- SEO Enhancements -->
     <title>Interest Rate Calculator</title>
-    <meta name="description" content="Calculate interest rates easily with our Interest Rate Calculator. Get quick and accurate results.">
+    <meta name="description" content="Calculate simple interest and total investment returns quickly with our free Interest Rate Calculator.">
 
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-
-    <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 
-    <h1>Interest Rate Calculator</h1>
+    <main class="container">
+        <h1>Interest Rate Calculator</h1>
 
-    <!-- Keep your existing calculator HTML content here -->
+        <p>Calculate the simple interest on your investment.</p>
 
-    <!-- JavaScript -->
+        <div class="calculator">
+
+            <label for="principal">Principal Amount ($)</label>
+            <input type="number" id="principal" placeholder="Enter principal amount" min="0">
+
+            <label for="rate">Annual Interest Rate (%)</label>
+            <input type="number" id="rate" placeholder="Enter interest rate" min="0" step="any">
+
+            <label for="time">Time (Years)</label>
+            <input type="number" id="time" placeholder="Enter time in years" min="0" step="any">
+
+            <button id="calculateBtn">Calculate Interest</button>
+
+            <div id="result" aria-live="polite"></div>
+
+        </div>
+    </main>
+
     <script src="script.js"></script>
+
 </body>
 </html>
