@@ -7,36 +7,40 @@
 
     <title>Interest Rate Calculator</title>
 
-    <meta name="description" content="Free Interest Rate Calculator to calculate simple interest and total amount easily.">
+    <meta name="description" content="Calculate simple interest and total investment amounts with our free and easy-to-use Interest Rate Calculator.">
 
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
-
-    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <main class="container">
-
         <h1>Interest Rate Calculator</h1>
 
-        <p>Calculate your simple interest easily.</p>
+        <p>Calculate your simple interest quickly and easily.</p>
 
-        <label for="principal">Principal Amount ($)</label>
-        <input type="number" id="principal" placeholder="Enter amount">
+        <div class="calculator">
 
-        <label for="rate">Interest Rate (%)</label>
-        <input type="number" id="rate" placeholder="Enter rate">
+            <label for="principal">Principal Amount ($)</label>
+            <input type="number" id="principal"
+                   placeholder="Enter principal amount" min="0" step="any">
 
-        <label for="time">Time (Years)</label>
-        <input type="number" id="time" placeholder="Enter years">
+            <label for="rate">Annual Interest Rate (%)</label>
+            <input type="number" id="rate"
+                   placeholder="Enter interest rate" min="0" step="any">
 
-        <button id="calculateBtn">Calculate Interest</button>
+            <label for="time">Time (Years)</label>
+            <input type="number" id="time"
+                   placeholder="Enter time in years" min="0" step="any">
 
-        <div id="result" aria-live="polite"></div>
+            <button type="button" id="calculateBtn">
+                Calculate Interest
+            </button>
 
+            <div id="result" aria-live="polite"></div>
+        </div>
     </main>
 
-    <script src="./script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
