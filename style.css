@@ -5,23 +5,31 @@
 
 body {
     margin: 0;
+    padding: 30px 15px;
     font-family: Arial, sans-serif;
     background: #eef2f7;
     color: #333;
 }
 
 .container {
-    max-width: 500px;
-    margin: 70px auto;
+    max-width: 480px;
+    margin: 50px auto;
     padding: 30px;
-    text-align: center;
     background: white;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
+    text-align: center;
     color: #2457a6;
+    margin-bottom: 10px;
+}
+
+p {
+    text-align: center;
+    color: #666;
+    line-height: 1.5;
 }
 
 .calculator {
@@ -29,14 +37,15 @@ h1 {
     flex-direction: column;
     gap: 12px;
     margin-top: 25px;
-    text-align: left;
 }
 
 label {
     font-weight: bold;
+    margin-top: 8px;
 }
 
 input {
+    width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 6px;
@@ -44,7 +53,8 @@ input {
 }
 
 button {
-    padding: 13px;
+    padding: 14px;
+    margin-top: 12px;
     background: #2457a6;
     color: white;
     border: none;
@@ -59,6 +69,9 @@ button:hover {
 
 #result {
     margin-top: 15px;
+    padding: 12px;
+    text-align: center;
     font-weight: bold;
     line-height: 1.8;
+    overflow-wrap: anywhere;
 }
